@@ -25,7 +25,7 @@ export default {
     add_pokemon() {
       axios
         .request({
-          url: 'http://127.0.0.1:5000/api/pokemon',
+          url: `${process.env.VUE_APP_BASE_DOMAIN}/api/pokemon`,
           method: 'POST',
           data: {
             name: this.$refs['name']['value'],

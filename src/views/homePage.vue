@@ -24,7 +24,7 @@ export default {
     all_pokemons() {
       axios
         .request({
-          url: 'http://127.0.0.1:5000/api/pokemon'
+          url: `${process.env.VUE_APP_BASE_DOMAIN}/api/pokemon`
         })
         .then((response) => {
           this.results = response['data']
