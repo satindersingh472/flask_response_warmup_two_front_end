@@ -46,4 +46,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.all_inputs{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+</style>
