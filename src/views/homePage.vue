@@ -56,7 +56,7 @@ export default {
     margin: 0px;
 }
 img{
-    width: 100%;
+    width: 300px;
     height: 300px;
     object-fit: cover;
 }
