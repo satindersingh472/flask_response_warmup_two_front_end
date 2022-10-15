@@ -7,6 +7,9 @@
         <p>Description: {{result[2]}}</p>
         <img :src="result[3]" :alt="`image of ${result[1]}`">
     </div>
+    <h2 v-if="message != undefined" >
+      {{message}}
+    </h2>
   </div>
 </template>
 
@@ -27,15 +30,20 @@ export default {
           url: `${process.env.VUE_APP_BASE_DOMAIN}/api/pokemon`
         })
         .then((response) => {
-          this.results = response['data']
+          if(response['data'] === "No results for your inout"){
+            this.message = response['data']
+          } else{
+            this.results = response['data']
+          }
         })
         .catch((error) => {
-          error
+          this.message = error;
         })
     },
   },
   data() {
     return {
+        message: undefined,
         results: undefined
     }
   },
